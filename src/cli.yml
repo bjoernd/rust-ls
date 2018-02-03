@@ -12,3 +12,5 @@ args:
         long: verbose
         multiple: true
         takes_value: false
+    - paths:
+        multiple: true

@@ -8,6 +8,8 @@ Because I can. Mostly for learning.
 
 ## Status
 
+Build status: [![Build Status](https://travis-ci.org/bjoernd/rust-ls.svg?branch=master)](https://travis-ci.org/bjoernd/rust-ls)
+
 This is still early work in progress.
 
 ### Usage

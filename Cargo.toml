@@ -1,6 +1,7 @@
 [package]
+authors = ["Bjoern Doebel <bjoern.doebel@gmail.com>"]
 name = "rust-ls"
 version = "0.1.0"
-authors = ["Bjoern Doebel <bjoern.doebel@gmail.com>"]
-
 [dependencies]
+log = "*"
+loggerv = "*"

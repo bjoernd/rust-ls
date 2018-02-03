@@ -3,5 +3,6 @@ authors = ["Bjoern Doebel <bjoern.doebel@gmail.com>"]
 name = "rust-ls"
 version = "0.1.0"
 [dependencies]
+clap = {version="2.27.0", features=["yaml"]}
 log = "*"
 loggerv = "*"

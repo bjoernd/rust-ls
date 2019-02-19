@@ -12,6 +12,22 @@ fn get_path_vector<'a>(app : &'a clap::ArgMatches) -> Vec<&'a str>
     }
 }
 
+fn pretty_print(entry : &std::fs::DirEntry)
+{
+    println!("{:?}", entry.path())
+}
+
+fn list_dir(path : &std::path::Path)
+{
+    info!("Listing {}", path.to_str().expect("Invalid path!?"));
+    for entry in path.read_dir().expect("read_dir failed.") {
+        match entry {
+            Ok(e) => pretty_print(&e),
+            Err(e) => println!("E: {}", e),
+        }
+    }
+}
+
 fn main() {
     let yaml = load_yaml!("cli.yml");
     let params = App::from_yaml(yaml).get_matches();
@@ -22,5 +38,9 @@ fn main() {
     let paths = get_path_vector(&params);
     for path in &paths {
         info!("  - {}", path);
+    }
+
+    for path in &paths {
+        list_dir(std::path::Path::new(path));
     }
 }

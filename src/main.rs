@@ -20,7 +20,7 @@ fn main() {
 
     info!("Path parameters:");
     let paths = get_path_vector(&params);
-    for path in paths {
+    for path in &paths {
         info!("  - {}", path);
     }
 }
